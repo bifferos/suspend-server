@@ -20,7 +20,7 @@ install:
 	sudo install -m 755 $(BINARY_NAME) $(INSTALL_DIR)/
 	sudo install -m 644 $(SERVICE_FILE) $(SYSTEMD_DIR)/
 	sudo install -d $(ETC_DIR)
-	sudo install -m 644 config.json /etc/$(APP_NAME)/config.json
+	sudo install -m 644 config.json $(ETC_DIR)/config.json
 	sudo systemctl daemon-reexec
 	sudo systemctl enable --now $(SERVICE_FILE)
 	@echo "Installed and started $(APP_NAME).service"
