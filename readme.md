@@ -26,5 +26,6 @@ $ make run
 
 Then in another terminal basic test of the server with:
 
-$ ./test.py
+$ make test
+
 
