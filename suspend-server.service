@@ -1,0 +1,10 @@
+[Unit]
+Description=Suspend server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/suspend-server.py --config /etc/suspend-server/config.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
