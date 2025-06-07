@@ -10,7 +10,7 @@ import unittest
 import socket
 
 
-SERVER_HOST = "127.0.0.1"
+SERVER_HOST = "172.16.16.13"
 SERVER_PORT = 6061
 
 class TestPingLiveServer(unittest.TestCase):

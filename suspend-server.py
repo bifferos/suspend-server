@@ -81,8 +81,8 @@ if __name__ == "__main__":
     else:
         config = {}
 
-    host = config.get('host', "0.0.0.0")
-    port = config.get('port', 6061)
+    host = config.get('listen_host', "0.0.0.0")
+    port = config.get('listen_port', 6061)
 
     run_server(host, port)
 
