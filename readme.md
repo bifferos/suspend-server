@@ -1,3 +1,10 @@
+Intro
+=====
+
+This service suspends the system when it receives a UDP packet
+with the text 'suspend' in it.  There is no security.
+
+
 Installation
 ============
 
