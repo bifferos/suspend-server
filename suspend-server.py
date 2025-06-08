@@ -69,8 +69,7 @@ def run_server(host, port):
             s.sendto(result.encode(), addr)
 
 
-if __name__ == "__main__":
-
+def main():
     parser = ArgumentParser()
     parser.add_argument('--config', type=str, default="/etc/suspend-server/config.json", help='Config file')
 
@@ -86,3 +85,6 @@ if __name__ == "__main__":
 
     run_server(host, port)
 
+
+if __name__ == "__main__":
+    main()
