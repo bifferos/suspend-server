@@ -5,6 +5,10 @@ After=network.target
 [Service]
 ExecStart=/usr/local/bin/suspend-server.py --config /etc/suspend-server/config.json
 Restart=on-failure
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
 
 [Install]
 WantedBy=multi-user.target
