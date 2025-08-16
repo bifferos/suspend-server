@@ -26,6 +26,10 @@ install:
 	@echo "Installed and started $(APP_NAME).service"
 
 
+logs:
+	journalctl -u $(SERVICE_FILE) -n 20
+
+
 info:
 	systemctl status $(SERVICE_FILE)
 
