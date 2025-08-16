@@ -47,3 +47,26 @@ suspend_me.py
 wake_me.sh
 
 However these scripts are best run remotely, from another machine!
+
+Troubleshooting
+===============
+
+All my work first time, however...
+Systemd can find many ways to avoid suspending your system, tasks need to 
+be run prior to suspend and they can end up hanging.  If you want a trouble
+free suspend it may be worth disabling hooks
+
+make a backup dir (once)
+$ sudo mkdir -p /usr/lib/systemd/system-sleep.disabled
+
+move both hooks out
+$ sudo mv /usr/lib/systemd/system-sleep/hdparm /usr/lib/systemd/system-sleep.disabled/
+$ sudo mv /usr/lib/systemd/system-sleep/nvidia /usr/lib/systemd/system-sleep.disabled/
+
+Reboot after doing this if the system is hung.  nvidia sleep operations are not 
+really needed if your system is headless, and the hdparm shouldn't be needed for 
+suspend as the disks should spin down after some idle time.
+
+$ systemctl list-jobs
+
+Will tell you if a suspend job has hung.  You will need to investigate why.
